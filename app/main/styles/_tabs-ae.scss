@@ -1,0 +1,11 @@
+
+.tabs-elements {
+  border-color: #e42a12;
+  background-color: #fff;
+  background-image: linear-gradient(0deg, #e42a12, #e42a12 50%, transparent 50%);
+  color: $elementblue;
+}
+
+.tab-item-active{
+  color: $elementblue;
+}

@@ -1,46 +1,64 @@
 'use strict';
 angular.module('main', [
-  'ionic',
-  'ngCordova',
-  'ui.router',
-  // TODO: load other modules selected during generation
-])
-.config(function ($stateProvider, $urlRouterProvider) {
+    'ionic',
+    'ngCordova',
+    'ui.router',
+    // TODO: load other modules selected during generation
+  ])
+  .config(function($stateProvider, $urlRouterProvider) {
 
-  // ROUTING with ui.router
-  $urlRouterProvider.otherwise('/main/list');
-  $stateProvider
-    // this state is placed in the <ion-nav-view> in the index.html
-    .state('main', {
-      url: '/main',
-      abstract: true,
-      templateUrl: 'main/templates/tabs.html'
-    })
-      .state('main.list', {
-        url: '/list',
+    // ROUTING with ui.router
+    $urlRouterProvider.otherwise('/main/dashboard');
+    $stateProvider
+      // this state is placed in the <ion-nav-view> in the index.html
+      .state('main', {
+        url: '/main',
+        abstract: true,
+        templateUrl: 'main/templates/tabs.html'
+      })
+      .state('main.dashboard', {
+        url: '/dashboard',
         views: {
-          'tab-list': {
-            templateUrl: 'main/templates/list.html',
-            // controller: 'SomeCtrl as ctrl'
+          'tab-dashboard': {
+            templateUrl: 'main/templates/dashboard.html',
+            controller: 'DashboardCtrl'
           }
         }
       })
-      .state('main.listDetail', {
-        url: '/list/detail',
+      .state('main.tasks', {
+        url: '/tasks',
         views: {
-          'tab-list': {
-            templateUrl: 'main/templates/list-detail.html',
-            // controller: 'SomeCtrl as ctrl'
+          'tab-tasks': {
+            templateUrl: 'main/templates/tasks.html',
+            controller: 'TasksCtrl'
           }
         }
       })
-      .state('main.debug', {
-        url: '/debug',
+      .state('main.notifications', {
+        url: '/notifications',
         views: {
-          'tab-debug': {
-            templateUrl: 'main/templates/debug.html',
-            controller: 'DebugCtrl as ctrl'
+          'tab-notifications': {
+            templateUrl: 'main/templates/notifications.html',
+            controller: 'NotificationsCtrl'
+          }
+        }
+      })
+      .state('main.activities', {
+        url: '/activities',
+        views: {
+          'tab-activities': {
+            templateUrl: 'main/templates/activities.html',
+            controller: 'ActivitiesCtrl'
+          }
+        }
+      })
+      .state('main.goals', {
+        url: '/goals',
+        views: {
+          'tab-goals': {
+            templateUrl: 'main/templates/goals.html',
+            controller: 'GoalsCtrl'
           }
         }
       });
-});
+  });
