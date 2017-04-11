@@ -16,6 +16,15 @@ angular.module('main', [
         abstract: true,
         templateUrl: 'main/templates/tabs.html'
       })
+      .state('main.login', {
+        url: '/login',
+        views: {
+          'main-login': {
+            templateUrl: 'main/templates/login.html',
+            controller: 'LoginCtrl'
+          }
+        }
+      })
       .state('main.dashboard', {
         url: '/dashboard',
         views: {

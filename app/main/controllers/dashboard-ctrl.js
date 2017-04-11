@@ -1,7 +1,12 @@
 'use strict';
 angular.module('main')
-.controller('DashboardCtrl', function ($log) {
+  .controller('DashboardCtrl', function($log, $scope, $rootScope, $state) {
 
-  $log.log('Hello from your Controller: DashboardCtrl in module main:. This is your controller:', this);
+    $scope.goLogin = function (){
+      $state.go('main.login');
+    };
 
-});
+    $scope.login();
+
+
+  });
